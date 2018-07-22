@@ -20,11 +20,11 @@ function ViewModel() {
 
             // Foursquare API Endpoint
             var apiUrl = 'https://api.foursquare.com/v2/venues/search?' +
-            'll=' + marker.lat + ',' + marker.lng
-            + '&client_id=' + clientID +
-            '&client_secret=' + clientSecret
-            + '&query=' + marker.title
-            + '&v=20170708' + '&m=foursquare';
+                         'll=' + marker.lat + ',' + marker.lng +
+                         '&client_id=' + clientID +
+                         '&client_secret=' + clientSecret +
+                         '&query=' + marker.title +
+                         '&v=20170708' + '&m=foursquare';
 
             $.getJSON(apiUrl).done(function(marker) {
                 var response = marker.response.venues[0];
