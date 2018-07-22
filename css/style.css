@@ -1,0 +1,83 @@
+.app_title {
+    padding: 15px 5px 10px 5px;
+}
+
+.bg-custom {
+    background: #f0ad4e;
+}
+
+.bg-custom > h4, a {
+    color: #fbedda !important;
+}
+
+.navbar-inverse {
+    max-width: 56px;
+}
+
+.sidebar_width {
+    min-width: 300px;
+}
+
+.sidebar_hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,1);
+}
+
+.location_list {
+    padding: 3px 5px 5px 5px;
+}
+
+.foursquare {
+    position: absolute;
+    bottom: 2px;
+    width: 60%;
+    left: 0;
+}
+
+.iw_title {
+    font-size: 1.5em;
+}
+
+.iw_subtitle {
+    font-size: 1em;
+}
+
+.iw_address_title {
+    margin-bottom: 2px;
+    font-size: 1em;
+}
+
+.iw_address {
+    margin-bottom: 0;
+    font-size: 0.7em;
+}
+
+.padding-zero {
+    padding: 0 0 0 0;
+}
+
+.padding-sides-10 {
+    padding: 0 10px 0 10px;
+}
+
+.search {
+    width: 100%;
+    font-size: .9em;
+}
+
+@media (max-width: 768px) {
+    .search {
+        font-size: .7em;
+        margin-top: 5px;
+    }
+}
+
+.map_error {
+    color: white;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}

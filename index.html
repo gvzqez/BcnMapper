@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Neighborhood Map Project" content="Map of Barcelona">
+    <title>Barcelona Bar Neighborhood</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <div class="col p-0 navbar-inverse bg-custom">
+            <a href class="float-left m-3 navbar-light" data-target="#sidebar" data-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </a>
+        </div>
+        <nav class="col-2 collapse bg-custom pt-2 h-100 sidebar_width" id="sidebar">
+            <h4 class="app_title">Barcelona Mapper</h4>
+            <!-- Search Input -->
+            <input class="search" data-bind="textInput: filterAction, valueUpdate: 'afterkeydown'" placeholder="Search Locations...">
+            <hr class="sidebar_hr">
+            <ul class="nav flex-column" data-bind="foreach: filter">
+                <a href="#">
+                    <li class="nav-item location_list" data-bind="text: title, click: $parent.populateAndBounceMarker"></li>
+                </a>
+            </ul>
+        </nav>
+        <div class="col p-0">
+            <div class="content bg-inverse">
+                <!-- Map Content -->
+                <div id="map">
+                    <!-- Map -->
+                    <p class="map_error"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/knockout-3.4.2.js" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="js/markers.js" charset="utf-8"></script>
+<script src="js/app.js" charset="utf-8"></script>
+
+<script>
+$(document).ready(function() {
+    function setHeight() {
+        windowHeight = $(window).innerHeight();
+        $('#map').css('min-height', windowHeight);
+        $('#sidebar').css('min-height', windowHeight);
+    };
+
+    setHeight();
+
+    $(window).resize(function() {
+       setHeight();
+    });
+});
+</script>
+
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBRTschOElF6NRclmCZymKOoGb0jKlNtfU&callback=initApp"
+        onerror="googleResponseError()">
+</script>
+
+</body>
+</html>
